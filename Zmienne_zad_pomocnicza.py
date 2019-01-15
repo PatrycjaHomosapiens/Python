@@ -1,10 +1,13 @@
+"""
+Utwórz 5 zmiennych (zm1, zm2...). Przypisz zmienne do zmiennych tak, by otrzymać zdanie "Programowanie jest ciekawe i wciagajace".
+Być może potrzebna będzie dodatkowa zmienna pomocnicza
+"""
+
 zm1 = "Ciekawe"
 zm2 = "Programowanie"
 zm3 = "Jest"
 zm4 = "Wciągające"
 zm5 = "I"
-
-#Programowanie jest ciekawe i wciagajace
 
 pomocnicza = zm1
 zm1 = zm2
