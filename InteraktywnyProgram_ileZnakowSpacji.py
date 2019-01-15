@@ -5,22 +5,22 @@ program ma za zadanie wypisac:
 - ile jest spacji we wprowadzonym tekscie
 """
 
+# bez użycia tekst.count(" ")
 tekst = input("Podaj dowolny tekst: ")
 ilosc_znakow = len(tekst)
-znak2 = tekst.replace(" ", "")
-ilosc_znakow2 = len(znak2)
-
+tekst2 = tekst.replace(" ", "")     # zamienia znaki, w tym przykładzie likwiduje spacje
+ilosc_znakow2 = len(tekst2)
 print(tekst)
-print(znak2)
+print(len(tekst))
+print(tekst2)
+print(len(tekst2))
 
 print("W tekście jest " + str(ilosc_znakow) + " znaków.")
 print("W tekście jest " + str(ilosc_znakow - ilosc_znakow2) + " spacji.")
 
-""" nieudana proba:
-ilosc_spacji = (tekst.count(" "))   # zlicza spacje
+# z użyciem tekst.count(" ")
+tekst = input("Podaj dowolny tekst: ")
+ilosc_znakow = len(tekst)
+ilosc_spacji = (tekst.count(" "))   # zlicza znaki, w tym przykładzie zlicza spacje
 print("W podanym tekście jest: " + str(ilosc_znakow) + " sztuk znaków.")
 print("W podanym tekście jest: " + str(ilosc_spacji) + " sztuk spacji.")
-print(tekst.replace(" ", ""))   # zamienia znaki
-print(tekst.count("0"))   # zlicza podane znaki
-print(ilosc_spacji)
-"""
