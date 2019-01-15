@@ -9,7 +9,7 @@ print(lista)
 lista.insert(2, 4)   # dodaje na konkretnej pozycji
 print(lista)
 print(2 in lista)
-lista.pop(1)
+lista.pop(1)    # zwraca i-ty element i usuwa go z listy
 print(lista)
 
 kursy = [ ["Python", 15, "Katowice"], ["Java", 10, "Kraków"] ]   # 2 elementy, może być więcej elementów, ale zwykle są 2
