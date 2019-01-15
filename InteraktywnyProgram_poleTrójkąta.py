@@ -1,5 +1,5 @@
 """
-Program, który oblicy pole trojkata, pod warunkiem ze uzytkownik poda wysokosc i dlugosz podstawy tego trojkata.
+Program, który obliczy pole trojkata, pod warunkiem ze uzytkownik poda wysokosc i dlugosz podstawy tego trojkata.
 Uwzglednij, ze wysokosc i dlugosc podstawy moga byc liczbami niecalkowitymi.
 """
 
