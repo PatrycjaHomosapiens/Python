@@ -1,7 +1,5 @@
 """
-Napisz program ktory sprawdz czy wpisana liczba jest parzysta i nieparzysta
-"""
-
+Napisz program, ktÓry sprawdz czy wpisana liczba jest parzysta czy nieparzysta """
 
 liczba = input("Wpisz liczbę: ")
 liczba = int(liczba)
@@ -11,9 +9,7 @@ if (liczba % 2 == 0):
 else:
     print("Liczba nieparzysta")
 
-"""
-liczba = input("Wpisz liczbę: ")
-liczba = int(liczba)
+""" ODWROTNY ZAPIS:
 
 if (liczba % 2 != 0):
     print("Liczba nieparzysta")
