@@ -1,9 +1,7 @@
 """
 TYPY SEKWENCYJNE
-
-napisz program, ktory 5 razy poprasi o podanie imienia
-podane imiona beda zapisywane do listy
-wypisz dla wszystkich imion ponizszy komunikat
+Napisz program, ktory 5 razy poprosi o podanie imienia. Podane imiona beda zapisywane do listy.
+Wypisz dla wszystkich imion ponizszy komunikat
 Cześć <tutaj imię z listy>
 """
 
