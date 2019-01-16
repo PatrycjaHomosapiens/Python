@@ -2,16 +2,11 @@ if (2 > 5):
     print("OK")
 print("OK2")   # to nie jest częścią if
 print("OK3")   # to nie jest częścią if
-print("OK4")   # to nie jest częścią if
 
-
-"""
 if (2 > 5):
-    print("OK")   
-    print("OK2")
-    print("OK3")
-    print("OK4")
-"""
+    print("OK")   # to jest częścią if
+    print("OK2")    # to jest częścią if
+    print("OK3")    # to jest częścią if
 
 # if ((2>5) and ()):   stosujemy nawiasy
 
@@ -39,7 +34,6 @@ elif (zmienna == 0):
 else:
     print("Wpisałeś cyfrę ujemną")
 print("Koniec programu")
-
 
 
 if (zmienna > 0):
