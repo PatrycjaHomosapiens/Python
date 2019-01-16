@@ -17,7 +17,9 @@ print(lista.count(10))  # zlicza wystąpienia 10 w liście
 print(lista.index(6))   # zwraca najmniejszy indeks i, tutaj zwraca indeks 2, bo na tej pozycji jest cyfra 6
 print(lista.remove(4))  # odnajduje x i usuwa go z listy, daje wynik "None" jeśli znajdzie i usunie dany element
                         # REMOVE usuwa po wartości, a POP po indekscie
-# print(lista.reverse()) # (??? jakiś błąd w zapisie) odwraca w miejscu kolejność elementów s
+print(lista)
+lista.reverse()         # odwraca kolejność elementów, przestawia elementy [1,2,3,4] zamienia na [4,3,2,1]
+print(lista)
 
 kursy = [ ["Python", 15, "Katowice"], ["Java", 10, "Kraków"] ]   # 2 elementy, może być więcej elementów, ale zwykle są 2
 # jak dostać się do informacji "Java"
