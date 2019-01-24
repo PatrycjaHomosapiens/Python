@@ -73,5 +73,20 @@ for plaster in tablica3d:
             suma += el
 print(suma)
 
+# Sposób REKURENCYJNY
+
+def wypisz_rek(element, poziom_zaglebienia=1):   # nie wiemy, co dostaniemy, poziom_zaglebienia to ile razy wywolalam funkcje
+    print(f'jestem na poziomie {poziom_zaglebienia}: {element}')
+
+    if type(element) != list:
+        return          # return w rekurencji działa podobnie jak continue w pętli
+
+    for el in element:
+        wypisz_rek(el, poziom_zaglebienia+1)      # jeśli znajdę listę, to ją wypisuję, a jeśli nie znajdę, to kończę
+
+# tablica = [2,[1,2,3],3,4] # nawet jeśli tak będzie wyglądać tablica, to zadziała
+print(tablica)
+wypisz_rek(tablica)
+
 # print(sum(tablica3d))  - nie wiem co to, coś nie wyszło
 
