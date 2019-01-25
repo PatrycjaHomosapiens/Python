@@ -2,6 +2,8 @@
 # użyj klasy produkt
 # zrób klase koszyk, do którego można wrzucić produkty
 # na koniec niech koszyk powie jaka jest jego sumaryczna wartosc
+from collections import defaultdict
+
 
 class Produkt():
     def __init__(self, id, nazwa, cena):
@@ -15,7 +17,8 @@ class Produkt():
 
 class Koszyk():
     def __init__(self):
-        self._pudelko = dict()        # pojedycze podkreślenie oznacza prywatną zawartość, tworzymy słownik, bo tam bedziemy trzymać
+        self._pudelko = defaultdict() # po wpisaniu defaultdict() podkreśli się na czerwono, wtedy robimy
+                                    # lewy Alt+Enter i na samej górze pojawi się "from collections import defaultdict
 
     def dodaj(self, prod, ile):
         if prod in self._pudelko:
