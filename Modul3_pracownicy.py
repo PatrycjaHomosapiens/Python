@@ -1,4 +1,5 @@
 """ Zadanie 81A:
+----------- dot. OBIEKTOWOŚCI ------------
 Klasa Pracownicy:
 - pola: imie, nazwisko, kontrakt (domyślnie: staż), pensja (domyślnie: 1000)
 - konstruktor ustawiający wartości na ww. pól
