@@ -18,10 +18,67 @@ def dodajKotakt():
     kontakty.append(dane)
     listaKontaktow()
 
+    wyczyscEntry()
+    entry_Imie.focus()      # kursor ma powrócić do pola imie
+
+def wyczyscEntry():
+    entry_Imie.delete(0, END)
+    entry_Nazwisko.delete(0, END)
+    entry_Telefon.delete(0, END)
+    entry_Email.delete(0, END)
+
 def listaKontaktow():
     listbox_ListaKontaktow.delete(0, END)
-    for index, value in enumerate(kontakty):
+    for index, value in enumerate(kontakty):     # index, value to wew. tablica
         listbox_ListaKontaktow.insert(index, value[0]+" "+value[1])     # doda się tylko imię[0] i nazwisko[1]
+
+def pokazSzczegoly():
+    index = listbox_ListaKontaktow.index(ACTIVE)     # pobiera index aktywnej wartości, czyli tego, co jest zaznaczone
+    label_ImieBottomValue["text"] = kontakty[index][0]
+    label_NazwiskoBottomValue["text"] = kontakty[index][1]
+    label_TelefonBottomValue["text"] = kontakty[index][2]
+    label_EmailBottomValue["text"] = kontakty[index][3]
+
+def usunKontakt():
+    index = listbox_ListaKontaktow.index(ACTIVE)
+    kontakty.pop(index)
+    listaKontaktow()        # po usunięciu wywołujemy nową listę
+    label_ImieBottomValue["text"] = ""  # czyścimy pola label po usunięciu i wyświetleniu nowej listy
+    label_NazwiskoBottomValue["text"] = ""
+    label_TelefonBottomValue["text"] = ""
+    label_EmailBottomValue["text"] = ""
+
+def edytujKontakt():
+    index = listbox_ListaKontaktow.index(ACTIVE)
+
+    wyczyscEntry()                                  # czyszczenie pól przed wprowadzeniem nowych danych
+    entry_Imie.insert(0, kontakty[index][0])        # dodawanie nowego imienia
+    entry_Nazwisko.insert(0, kontakty[index][1])
+    entry_Telefon.insert(0, kontakty[index][2])
+    entry_Email.insert(0, kontakty[index][3])
+
+    button_DodajKontakt["text"] = "Zmień kontakt"
+    button_DodajKontakt["command"] = zmienKontakt
+
+def zmienKontakt():
+    index = listbox_ListaKontaktow.index(ACTIVE)
+
+    kontakty[index][0] = entry_Imie.get()
+    kontakty[index][1] = entry_Nazwisko.get()
+    kontakty[index][2] = entry_Telefon.get()
+    kontakty[index][3] = entry_Email.get()
+
+    button_DodajKontakt["text"] = "Dodaj kontakt"
+    button_DodajKontakt["command"] = dodajKotakt
+
+    wyczyscEntry()
+    entry_Imie.focus()
+    listaKontaktow()
+
+
+
+
+
 
 
 appLeft = Frame(root, pady=20)      # pady to dopełnienie, żeby nie dochodziło do samej krawędzi
@@ -34,9 +91,9 @@ appBottom.grid(row=1, column=0, columnspan=2)
 # lewa strona aplikacji
 label_ListaKontaktow = Label(appLeft, text="Lista kontaktów: ")
 listbox_ListaKontaktow = Listbox(appLeft, width=20, height=7)
-button_PokazKontakt = Button(appLeft,  text="Pokaż szczegóły kontaktu")
-button_UsunKontakt = Button(appLeft,  text="Usuń kontakt")
-button_EdytujKontakt = Button(appLeft,  text="Edytuj kontakt")
+button_PokazKontakt = Button(appLeft,  text="Pokaż szczegóły kontaktu", command=pokazSzczegoly)
+button_UsunKontakt = Button(appLeft,  text="Usuń kontakt", command=usunKontakt)
+button_EdytujKontakt = Button(appLeft,  text="Edytuj kontakt", command=edytujKontakt)
 
 label_ListaKontaktow.grid(row=0, column=0, columnspan=3)
 listbox_ListaKontaktow.grid(row=1, column=0, columnspan=3)
@@ -65,8 +122,8 @@ entry_Nazwisko.grid(row=2, column=1, sticky=W)
 entry_Telefon.grid(row=3, column=1, sticky=W)
 entry_Email.grid(row=4, column=1, sticky=W)
 
-bttn1 = Button(appRight, text = "Dodaj kontakt: ", command=dodajKotakt)
-bttn1.grid(row=5, column=0, columnspan=2)
+button_DodajKontakt = Button(appRight, text = "Dodaj kontakt: ", command=dodajKotakt)
+button_DodajKontakt.grid(row=5, column=0, columnspan=2)
 
 # dolna część aplikacji
 label_SzczegolyKontaktu = Label(appBottom, text="Szczegóły kontaktu:")
