@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<a href="{% url 'contactNew' %}">Dodaj nowy kontakt</a>
+
+
+
+
+{% for contact in contacts %}       <!-- funkcje, czyli tagi, mają 2 %% na początku i na końcu -->
+
+<div>
+    <p>
+        Imie: {{ contact.firstName}}
+    </p>
+    <p>
+        Nazwisko: {{ contact.lastName}}
+    </p>
+    <p>
+        Email: {{ contact.email}}
+    </p>
+    <p>
+        Telefon: {{ contact.phone}}
+    </p>
+</div>
+
+{% endfor %}
+
+</body>
+</html>
