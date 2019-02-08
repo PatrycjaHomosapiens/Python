@@ -46,7 +46,28 @@ def delete():
         print("Operacja anulowana!")
 
 def update():
-    pass
+    pesel = input("Podaj pesel osoby do modyfikacji: ")
+    imie = input("Podaj nowe imię: ")
+    nazwisko = input("Podaj nowe nazwisko: ")
+    pensja = input("Podaj nową pensję: ")
+
+    c.execute('SELECT idpracownicy FROM pracownicy WHERE pesel = (%s)', (pesel))
+    id = c.fetchall()[0][0]
+    print(id)
+    c.execute('UPDATE pracownicy SET imie=%s, nazwisko=%s, pensja=%s, pesel=%s WHERE idpracownicy = (%s)',  (imie, nazwisko, pensja, pesel, id))
+
+    dec = input("Czy na pewno chcesz zmienić dane? T / N: ").upper()
+    if dec == "T":
+        conn.commit()
+        print("Zmieniono pomyślnie!")
+    else:
+        conn.rollback()
+        print("Operacja anulowana!")
+
+
+
+
+
 
 while(True):
     dec = input("S-show, I-insert, D-delete, U-update, Q-exit: ").upper()
